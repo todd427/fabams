@@ -31,7 +31,7 @@ def fb_get(endpoint, params=None):
     url = f"{BASE_URL}/{endpoint}"
 
     max_attempts = 10
-    wait_time = 5  # start at 5s
+    wait_time = 5
 
     for attempt in range(max_attempts):
         response = requests.get(url, params=params)
@@ -50,7 +50,7 @@ def fb_get(endpoint, params=None):
         if "User request limit reached" in response.text:
             print(f"⚠️ Rate limit hit. Waiting {wait_time}s before retry {attempt+1}/{max_attempts}...")
             time.sleep(wait_time)
-            wait_time = min(wait_time * 2, 300)  # cap at 5 minutes
+            wait_time = min(wait_time * 2, 300)
             continue
 
         print(f"❌ API error {response.status_code} on {url}")
@@ -75,7 +75,7 @@ def fetch_campaigns():
     """Fetch only ACTIVE campaigns."""
     print("📣 Fetching ACTIVE campaigns...")
     campaigns = fb_get(f"{AD_ACCOUNT}/campaigns", {
-        "fields": "id,name,status,effective_status",
+        "fields": "id,name,status",
         "limit": 100
     }).get("data", [])
 
@@ -93,26 +93,11 @@ def fetch_adsets(campaign_id):
     return [a for a in adsets if a.get("status") == "ACTIVE"]
 
 
-def fetch_creative_details(creative_id):
-    """Fetch full creative data for a given creative ID."""
-    fields = (
-        "object_story_spec{"
-        "link_data{"
-        "link,"
-        "child_attachments{link},"
-        "call_to_action{value{link}}"
-        "}"
-        "},"
-        "object_url,"
-        "image_url,"
-        "instagram_permalink_url,"
-        "name"
-    )
-    return fb_get(f"{creative_id}", {"fields": fields})
+def fetch_creative_link(creative_id):
+    """Fetch only the link from object_story_spec.link_data.link (and fallback object_url)."""
+    fields = "object_story_spec{link_data{link}},object_url"
+    creative_data = fb_get(f"{creative_id}", {"fields": fields})
 
-
-def extract_target_url(creative_data):
-    """Extract the destination URL from a creative."""
     target_url = None
     url_source = "none"
 
@@ -122,24 +107,15 @@ def extract_target_url(creative_data):
     if "link" in link_data:
         target_url = link_data["link"]
         url_source = "link_data.link"
-    elif "child_attachments" in link_data:
-        for child in link_data["child_attachments"]:
-            if "link" in child:
-                target_url = child["link"]
-                url_source = "child_attachments.link"
-                break
-    elif "call_to_action" in link_data and "value" in link_data["call_to_action"]:
-        target_url = link_data["call_to_action"]["value"].get("link")
-        url_source = "call_to_action.value.link"
     elif creative_data.get("object_url"):
         target_url = creative_data["object_url"]
         url_source = "creative.object_url"
 
-    return target_url, url_source
+    return target_url, url_source, creative_data
 
 
 def fetch_ads(adset_id):
-    """Fetch only ACTIVE ads and pull full creative details separately."""
+    """Fetch only ACTIVE ads and pull creative link separately."""
     ads = fb_get(f"{adset_id}/ads", {
         "fields": "id,name,status,creative{id}",
         "limit": 100
@@ -151,20 +127,17 @@ def fetch_ads(adset_id):
             continue
 
         creative_id = ad.get("creative", {}).get("id")
-        target_url, url_source = None, "no_creative"
+        target_url, url_source, creative_data = None, "no_creative", {}
 
         if creative_id:
-            creative_data = fetch_creative_details(creative_id)
-            ad["creative"] = creative_data  # ✅ store full creative object in ad
-            target_url, url_source = extract_target_url(creative_data)
-
-        print(f"DEBUG: Ad '{ad.get('name')}' URL source: {url_source}, raw: {target_url}")
+            target_url, url_source, creative_data = fetch_creative_link(creative_id)
 
         if target_url:
             target_url = normalize_amazon_url(target_url)
 
-        print(f"DEBUG: Ad '{ad.get('name')}' normalized target_url: {target_url}")
+        print(f"DEBUG: Ad '{ad.get('name')}' URL source: {url_source} → {target_url}")
 
+        ad["creative"] = creative_data
         ad["target_url"] = target_url
         ad["url_source"] = url_source
         active_ads.append(ad)
