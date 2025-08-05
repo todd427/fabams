@@ -1,0 +1,529 @@
+[
+  {
+    "campaign_name": "Third Pass",
+    "campaign_id": "120220873725800146",
+    "adset_name": "Third Pass",
+    "adset_id": "120220873725820146",
+    "ad_name": "Third Pass Ad 1",
+    "ad_id": "120220873726090146",
+    "metrics": {
+      "impressions": "160920",
+      "clicks": "10121",
+      "spend": "301.56",
+      "cpc": "0.029795",
+      "ctr": "6.289461",
+      "actions": [
+        {
+          "action_type": "onsite_conversion.messaging_conversation_started_7d",
+          "value": "1"
+        },
+        {
+          "action_type": "onsite_conversion.total_messaging_connection",
+          "value": "1"
+        },
+        {
+          "action_type": "app_site_visit",
+          "value": "6"
+        },
+        {
+          "action_type": "post_engagement",
+          "value": "6407"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "61"
+        },
+        {
+          "action_type": "comment",
+          "value": "94"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "6437"
+        },
+        {
+          "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+          "value": "1"
+        },
+        {
+          "action_type": "onsite_conversion.messaging_first_reply",
+          "value": "1"
+        },
+        {
+          "action_type": "post",
+          "value": "50"
+        },
+        {
+          "action_type": "like",
+          "value": "30"
+        },
+        {
+          "action_type": "omni_landing_page_view",
+          "value": "6"
+        },
+        {
+          "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+          "value": "1"
+        },
+        {
+          "action_type": "video_view",
+          "value": "7"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "872"
+        },
+        {
+          "action_type": "link_click",
+          "value": "5323"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "LAW 5-15-2025",
+    "campaign_id": "120220095274800146",
+    "adset_name": "LAW 5-15-2025",
+    "adset_id": "120220095275000146",
+    "ad_name": "Winner 1B - Copy 4",
+    "ad_id": "120220104591000146",
+    "metrics": {
+      "impressions": "29569",
+      "clicks": "1757",
+      "spend": "175.12",
+      "cpc": "0.09967",
+      "ctr": "5.942034",
+      "actions": [
+        {
+          "action_type": "app_site_visit",
+          "value": "3"
+        },
+        {
+          "action_type": "post_engagement",
+          "value": "989"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "21"
+        },
+        {
+          "action_type": "comment",
+          "value": "6"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "991"
+        },
+        {
+          "action_type": "post",
+          "value": "6"
+        },
+        {
+          "action_type": "like",
+          "value": "2"
+        },
+        {
+          "action_type": "omni_landing_page_view",
+          "value": "3"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "144"
+        },
+        {
+          "action_type": "link_click",
+          "value": "812"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "LAW 5-15-2025",
+    "campaign_id": "120220095274800146",
+    "adset_name": "LAW 5-15-2025",
+    "adset_id": "120220095275000146",
+    "ad_name": "Winner 1B - Copy 3",
+    "ad_id": "120220095275590146",
+    "metrics": {
+      "impressions": "36208",
+      "clicks": "2303",
+      "spend": "276.3",
+      "cpc": "0.119974",
+      "ctr": "6.360473",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "1597"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "22"
+        },
+        {
+          "action_type": "comment",
+          "value": "8"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "1599"
+        },
+        {
+          "action_type": "post",
+          "value": "12"
+        },
+        {
+          "action_type": "like",
+          "value": "2"
+        },
+        {
+          "action_type": "video_view",
+          "value": "10"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "153"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1392"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "Ghost War",
+    "campaign_id": "120219328015730146",
+    "adset_name": "Ghost War Ad Set",
+    "adset_id": "120219328017090146",
+    "ad_name": "GW Image 1 - Copy 3",
+    "ad_id": "120219328017790146",
+    "metrics": {
+      "impressions": "21378",
+      "clicks": "1663",
+      "spend": "452.32",
+      "cpc": "0.27199",
+      "ctr": "7.779025",
+      "actions": [
+        {
+          "action_type": "onsite_conversion.messaging_block",
+          "value": "2"
+        },
+        {
+          "action_type": "post_engagement",
+          "value": "1638"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "17"
+        },
+        {
+          "action_type": "comment",
+          "value": "1"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "1638"
+        },
+        {
+          "action_type": "post",
+          "value": "1"
+        },
+        {
+          "action_type": "video_view",
+          "value": "28"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "34"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1557"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL - Canada",
+    "campaign_id": "120217604683390146",
+    "adset_name": "JG NL 12.14.2023 - Copy",
+    "adset_id": "120217604683590146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120217604683580146",
+    "metrics": {
+      "impressions": "130860",
+      "clicks": "922",
+      "spend": "142.22",
+      "cpc": "0.154252",
+      "ctr": "0.70457",
+      "actions": [
+        {
+          "action_type": "app_site_visit",
+          "value": "1"
+        },
+        {
+          "action_type": "post_engagement",
+          "value": "2286"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "3"
+        },
+        {
+          "action_type": "comment",
+          "value": "1"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "2287"
+        },
+        {
+          "action_type": "post",
+          "value": "1"
+        },
+        {
+          "action_type": "like",
+          "value": "1"
+        },
+        {
+          "action_type": "omni_landing_page_view",
+          "value": "1"
+        },
+        {
+          "action_type": "video_view",
+          "value": "1418"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "16"
+        },
+        {
+          "action_type": "link_click",
+          "value": "847"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "Cody's War Winner 4A",
+    "campaign_id": "120215204041120146",
+    "adset_name": "Cody's War Winner 4A - CA",
+    "adset_id": "120217088396010146",
+    "ad_name": "Winner 4 A - Music - UK",
+    "ad_id": "120217088396020146",
+    "metrics": {
+      "impressions": "20518",
+      "clicks": "773",
+      "spend": "52.93",
+      "cpc": "0.068473",
+      "ctr": "3.767424",
+      "actions": [
+        {
+          "action_type": "app_site_visit",
+          "value": "1"
+        },
+        {
+          "action_type": "post_engagement",
+          "value": "312"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "1"
+        },
+        {
+          "action_type": "comment",
+          "value": "4"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "312"
+        },
+        {
+          "action_type": "post",
+          "value": "1"
+        },
+        {
+          "action_type": "omni_landing_page_view",
+          "value": "1"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "24"
+        },
+        {
+          "action_type": "link_click",
+          "value": "282"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "Cody's War Winner 4A",
+    "campaign_id": "120215204041120146",
+    "adset_name": "Cody's War Winner 4A - UK",
+    "adset_id": "120215811591470146",
+    "ad_name": "Winner 4 A - Music - UK",
+    "ad_id": "120215811858110146",
+    "metrics": {
+      "impressions": "100059",
+      "clicks": "2021",
+      "spend": "206.12",
+      "cpc": "0.101989",
+      "ctr": "2.019808",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "1272"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "4"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "1275"
+        },
+        {
+          "action_type": "post",
+          "value": "2"
+        },
+        {
+          "action_type": "like",
+          "value": "3"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "50"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1216"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "Cody's War Winner 4A",
+    "campaign_id": "120215204041120146",
+    "adset_name": "Cody's War Winner 4A",
+    "adset_id": "120215204041150146",
+    "ad_name": "Winner 4 A - Music",
+    "ad_id": "120215496075630146",
+    "metrics": {
+      "impressions": "7390",
+      "clicks": "737",
+      "spend": "42.04",
+      "cpc": "0.057042",
+      "ctr": "9.972936",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "280"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "5"
+        },
+        {
+          "action_type": "comment",
+          "value": "2"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "281"
+        },
+        {
+          "action_type": "post",
+          "value": "1"
+        },
+        {
+          "action_type": "like",
+          "value": "1"
+        },
+        {
+          "action_type": "video_view",
+          "value": "4"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "24"
+        },
+        {
+          "action_type": "link_click",
+          "value": "244"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL 12.14.2023",
+    "campaign_id": "120201329366930146",
+    "adset_name": "JG NL 12.14.2023",
+    "adset_id": "120201329367070146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120201329367180146",
+    "metrics": {
+      "impressions": "36141",
+      "clicks": "1347",
+      "spend": "147.04",
+      "cpc": "0.109161",
+      "ctr": "3.727069",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "5148"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "10"
+        },
+        {
+          "action_type": "comment",
+          "value": "3"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "5153"
+        },
+        {
+          "action_type": "post",
+          "value": "4"
+        },
+        {
+          "action_type": "like",
+          "value": "5"
+        },
+        {
+          "action_type": "video_view",
+          "value": "3877"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "80"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1174"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  }
+]

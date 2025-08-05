@@ -50,25 +50,36 @@ def fb_get(endpoint, params=None):
 
 
 def fetch_campaigns():
-    print("📣 Fetching campaigns...")
-    return fb_get(f"{AD_ACCOUNT}/campaigns", {
+    """Fetch only ACTIVE campaigns."""
+    print("📣 Fetching ACTIVE campaigns...")
+    campaigns = fb_get(f"{AD_ACCOUNT}/campaigns", {
         "fields": "id,name,status,effective_status",
         "limit": 100
     }).get("data", [])
 
+    active_campaigns = [c for c in campaigns if c.get("status") == "ACTIVE"]
+    print(f"✅ Found {len(active_campaigns)} active campaigns out of {len(campaigns)} total")
+    return active_campaigns
+
 
 def fetch_adsets(campaign_id):
-    return fb_get(f"{campaign_id}/adsets", {
+    """Fetch only ACTIVE ad sets."""
+    adsets = fb_get(f"{campaign_id}/adsets", {
         "fields": "id,name,status",
         "limit": 100
     }).get("data", [])
 
+    return [a for a in adsets if a.get("status") == "ACTIVE"]
+
 
 def fetch_ads(adset_id):
-    return fb_get(f"{adset_id}/ads", {
+    """Fetch only ACTIVE ads."""
+    ads = fb_get(f"{adset_id}/ads", {
         "fields": "id,name,status,creative",
         "limit": 100
     }).get("data", [])
+
+    return [ad for ad in ads if ad.get("status") == "ACTIVE"]
 
 
 def load_json(path, default):
@@ -105,7 +116,8 @@ def main():
         if not start:
             if campaign["id"] == last_id:
                 start = True
-            continue
+            else:
+                continue
 
         log_start(campaign)
 
@@ -134,7 +146,7 @@ def main():
 
         log_finish(campaign)
 
-    print("🎉 All campaigns processed!")
+    print("🎉 All active campaigns processed!")
 
 
 if __name__ == "__main__":

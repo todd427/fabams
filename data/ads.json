@@ -1,0 +1,185 @@
+[
+  {
+    "campaign_id": "120220873725800146",
+    "name": "Third Pass",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120220873725820146",
+        "name": "Third Pass",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120220873726090146",
+            "name": "Third Pass Ad 1",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "1019126353676382"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120220095274800146",
+    "name": "LAW 5-15-2025",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120220095275000146",
+        "name": "LAW 5-15-2025",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120220104591000146",
+            "name": "Winner 1B - Copy 4",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "1362920048310858"
+            }
+          },
+          {
+            "id": "120220095275590146",
+            "name": "Winner 1B - Copy 3",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "661152710141094"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120219328015730146",
+    "name": "Ghost War",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120219328017090146",
+        "name": "Ghost War Ad Set",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120219328017790146",
+            "name": "GW Image 1 - Copy 3",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "1204881054352470"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120217604683390146",
+    "name": "JG NL - Canada",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120217604683590146",
+        "name": "JG NL 12.14.2023 - Copy",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120217604683580146",
+            "name": "JG NL 12.14.2023",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "120204094200500146"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120215204041120146",
+    "name": "Cody's War Winner 4A",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120217088396010146",
+        "name": "Cody's War Winner 4A - CA",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120217088396020146",
+            "name": "Winner 4 A - Music - UK",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "1227042682348808"
+            }
+          }
+        ]
+      },
+      {
+        "adset_id": "120215811591470146",
+        "name": "Cody's War Winner 4A - UK",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120215811858110146",
+            "name": "Winner 4 A - Music - UK",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "1668337727378640"
+            }
+          }
+        ]
+      },
+      {
+        "adset_id": "120215204041150146",
+        "name": "Cody's War Winner 4A",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120215496075630146",
+            "name": "Winner 4 A - Music",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "1034787098560820"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120212223751320146",
+    "name": "LAW AMMO 1.3.2025",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120219330068460146",
+        "name": "Sress",
+        "status": "ACTIVE",
+        "ads": []
+      }
+    ]
+  },
+  {
+    "campaign_id": "120201329366930146",
+    "name": "JG NL 12.14.2023",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120201329367070146",
+        "name": "JG NL 12.14.2023",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120201329367180146",
+            "name": "JG NL 12.14.2023",
+            "status": "ACTIVE",
+            "creative": {
+              "id": "120204094200500146"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
