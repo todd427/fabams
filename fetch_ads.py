@@ -4,6 +4,7 @@ import time
 import requests
 from dotenv import load_dotenv
 from datetime import datetime
+from urllib.parse import urlparse
 
 # Load environment variables
 load_dotenv()
@@ -19,7 +20,7 @@ OUTPUT_DIR = "data"
 ADS_FILE = os.path.join(OUTPUT_DIR, "ads.json")
 PROGRESS_FILE = os.path.join(OUTPUT_DIR, "fetch_progress.json")
 
-# Ensure data/ directory exists
+# Ensure data directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
@@ -45,8 +46,15 @@ def fb_get(endpoint, params=None):
             except Exception:
                 print(response.text)
             return {}
-
     raise Exception("❌ Too many failed retries — aborting.")
+
+
+def normalize_amazon_url(url):
+    """Strip tracking parameters from Amazon URLs."""
+    if not url:
+        return url
+    parsed = urlparse(url)
+    return f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
 
 
 def fetch_campaigns():
@@ -68,18 +76,38 @@ def fetch_adsets(campaign_id):
         "fields": "id,name,status",
         "limit": 100
     }).get("data", [])
-
     return [a for a in adsets if a.get("status") == "ACTIVE"]
 
 
 def fetch_ads(adset_id):
-    """Fetch only ACTIVE ads."""
+    """Fetch only ACTIVE ads, including creative & normalized target URL."""
     ads = fb_get(f"{adset_id}/ads", {
-        "fields": "id,name,status,creative",
+        "fields": "id,name,status,creative{object_story_spec}",
         "limit": 100
     }).get("data", [])
 
-    return [ad for ad in ads if ad.get("status") == "ACTIVE"]
+    active_ads = []
+    for ad in ads:
+        if ad.get("status") != "ACTIVE":
+            continue
+
+        target_url = None
+        creative = ad.get("creative", {})
+        oss = creative.get("object_story_spec", {})
+        link_data = oss.get("link_data", {})
+
+        if "link" in link_data:
+            target_url = link_data["link"]
+        elif "call_to_action" in link_data and "value" in link_data["call_to_action"]:
+            target_url = link_data["call_to_action"]["value"].get("link")
+
+        if target_url:
+            target_url = normalize_amazon_url(target_url)
+
+        ad["target_url"] = target_url
+        active_ads.append(ad)
+
+    return active_ads
 
 
 def load_json(path, default):
