@@ -24,28 +24,43 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 def fb_get(endpoint, params=None):
-    """GET request to Facebook Graph API with backoff handling."""
+    """GET request to Facebook Graph API with extended backoff."""
     if params is None:
         params = {}
     params["access_token"] = ACCESS_TOKEN
     url = f"{BASE_URL}/{endpoint}"
 
-    for attempt in range(5):
+    max_attempts = 10
+    wait_time = 5  # start at 5s
+
+    for attempt in range(max_attempts):
         response = requests.get(url, params=params)
+
+        # Debug API usage
+        usage = {
+            "app_usage": response.headers.get("X-App-Usage"),
+            "account_usage": response.headers.get("X-Ad-Account-Usage")
+        }
+        if any(usage.values()):
+            print(f"📊 API Usage: {usage}")
+
         if response.status_code == 200:
             return response.json()
-        elif "User request limit reached" in response.text:
-            wait_time = 2 ** attempt
-            print(f"⚠️ Rate limit hit. Backing off for {wait_time}s...")
+
+        if "User request limit reached" in response.text:
+            print(f"⚠️ Rate limit hit. Waiting {wait_time}s before retry {attempt+1}/{max_attempts}...")
             time.sleep(wait_time)
-        else:
-            print(f"❌ API error: {response.status_code}")
-            try:
-                print(response.json())
-            except Exception:
-                print(response.text)
-            return {}
-    raise Exception("❌ Too many failed retries — aborting.")
+            wait_time = min(wait_time * 2, 300)  # cap at 5 minutes
+            continue
+
+        print(f"❌ API error {response.status_code} on {url}")
+        try:
+            print(response.json())
+        except Exception:
+            print(response.text)
+        return {}
+
+    raise Exception("❌ Too many failed retries — aborting after extended backoff.")
 
 
 def normalize_amazon_url(url):
@@ -78,10 +93,55 @@ def fetch_adsets(campaign_id):
     return [a for a in adsets if a.get("status") == "ACTIVE"]
 
 
+def fetch_creative_details(creative_id):
+    """Fetch full creative data for a given creative ID."""
+    fields = (
+        "object_story_spec{"
+        "link_data{"
+        "link,"
+        "child_attachments{link},"
+        "call_to_action{value{link}}"
+        "}"
+        "},"
+        "object_url,"
+        "image_url,"
+        "instagram_permalink_url,"
+        "name"
+    )
+    return fb_get(f"{creative_id}", {"fields": fields})
+
+
+def extract_target_url(creative_data):
+    """Extract the destination URL from a creative."""
+    target_url = None
+    url_source = "none"
+
+    oss = creative_data.get("object_story_spec", {})
+    link_data = oss.get("link_data", {})
+
+    if "link" in link_data:
+        target_url = link_data["link"]
+        url_source = "link_data.link"
+    elif "child_attachments" in link_data:
+        for child in link_data["child_attachments"]:
+            if "link" in child:
+                target_url = child["link"]
+                url_source = "child_attachments.link"
+                break
+    elif "call_to_action" in link_data and "value" in link_data["call_to_action"]:
+        target_url = link_data["call_to_action"]["value"].get("link")
+        url_source = "call_to_action.value.link"
+    elif creative_data.get("object_url"):
+        target_url = creative_data["object_url"]
+        url_source = "creative.object_url"
+
+    return target_url, url_source
+
+
 def fetch_ads(adset_id):
-    """Fetch only ACTIVE ads, including creative & normalized target URL."""
+    """Fetch only ACTIVE ads and pull full creative details separately."""
     ads = fb_get(f"{adset_id}/ads", {
-        "fields": "id,name,status,creative{object_story_spec,object_url}",
+        "fields": "id,name,status,creative{id}",
         "limit": 100
     }).get("data", [])
 
@@ -90,33 +150,23 @@ def fetch_ads(adset_id):
         if ad.get("status") != "ACTIVE":
             continue
 
-        target_url = None
-        creative = ad.get("creative", {})
-        oss = creative.get("object_story_spec", {})
+        creative_id = ad.get("creative", {}).get("id")
+        target_url, url_source = None, "no_creative"
 
-        # Try link_data.link
-        if "link_data" in oss and "link" in oss["link_data"]:
-            target_url = oss["link_data"]["link"]
+        if creative_id:
+            creative_data = fetch_creative_details(creative_id)
+            ad["creative"] = creative_data  # ✅ store full creative object in ad
+            target_url, url_source = extract_target_url(creative_data)
 
-        # Try link_data.call_to_action.value.link
-        elif "link_data" in oss and "call_to_action" in oss["link_data"]:
-            target_url = oss["link_data"]["call_to_action"]["value"].get("link")
-
-        # Try video_data.link
-        elif "video_data" in oss and "link" in oss["video_data"]:
-            target_url = oss["video_data"]["link"]
-
-        # Try creative.object_url
-        elif creative.get("object_url"):
-            target_url = creative["object_url"]
-
-        print(f"DEBUG: Ad '{ad.get('name')}' raw URL: {target_url}")
+        print(f"DEBUG: Ad '{ad.get('name')}' URL source: {url_source}, raw: {target_url}")
 
         if target_url:
             target_url = normalize_amazon_url(target_url)
-        print(f"DEBUG: Ad '{ad.get('name')}' normalized URL: {target_url}")
+
+        print(f"DEBUG: Ad '{ad.get('name')}' normalized target_url: {target_url}")
 
         ad["target_url"] = target_url
+        ad["url_source"] = url_source
         active_ads.append(ad)
 
     return active_ads
@@ -150,7 +200,7 @@ def main():
     last_id = progress.get("last_campaign_id")
 
     campaigns = fetch_campaigns()
-    start = not last_id  # If no progress file, start immediately
+    start = not last_id
 
     for campaign in campaigns:
         if not start:
@@ -170,7 +220,7 @@ def main():
 
         adsets = fetch_adsets(campaign["id"])
         for adset in adsets:
-            time.sleep(1)  # throttle
+            time.sleep(1)
             ads = fetch_ads(adset["id"])
             adset_obj = {
                 "adset_id": adset["id"],
