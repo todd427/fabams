@@ -1,0 +1,82 @@
+[
+  {
+    "id": "120219330415450146",
+    "name": "Winner 1A - Music - Copy 2",
+    "creative": {
+      "id": "2153239648435068"
+    },
+    "status": "PAUSED"
+  },
+  {
+    "id": "120219330520270146",
+    "name": "Winner 2B - Copy 2",
+    "creative": {
+      "id": "1190636439211082"
+    },
+    "status": "PAUSED"
+  },
+  {
+    "id": "120220873726090146",
+    "name": "Third Pass Ad 1",
+    "creative": {
+      "id": "1019126353676382"
+    },
+    "status": "ACTIVE"
+  },
+  {
+    "id": "120220104591000146",
+    "name": "Winner 1B - Copy 4",
+    "creative": {
+      "id": "1362920048310858"
+    },
+    "status": "ACTIVE"
+  },
+  {
+    "id": "120219330520260146",
+    "name": "Winner 1B - Copy 3",
+    "creative": {
+      "id": "9748208648587982"
+    },
+    "status": "PAUSED"
+  },
+  {
+    "id": "120219330520280146",
+    "name": "Winner 1B - Copy 2",
+    "creative": {
+      "id": "913162160876690"
+    },
+    "status": "PAUSED"
+  },
+  {
+    "id": "120220095275590146",
+    "name": "Winner 1B - Copy 3",
+    "creative": {
+      "id": "661152710141094"
+    },
+    "status": "ACTIVE"
+  },
+  {
+    "id": "120219328017790146",
+    "name": "GW Image 1 - Copy 3",
+    "creative": {
+      "id": "1204881054352470"
+    },
+    "status": "ACTIVE"
+  },
+  {
+    "id": "120217050960670146",
+    "name": "Winner 1A - Music - Copy",
+    "creative": {
+      "id": "694879012887108"
+    },
+    "status": "PAUSED"
+  },
+  {
+    "id": "120217050960660146",
+    "name": "Winner 1B - Copy",
+    "creative": {
+      "id": "647357408097419"
+    },
+    "status": "PAUSED"
+  }
+]

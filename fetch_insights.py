@@ -9,7 +9,7 @@ from datetime import datetime
 load_dotenv()
 
 ACCESS_TOKEN = os.getenv("FB_ACCESS_TOKEN")
-API_VERSION = "v19.0"
+API_VERSION = "v23.0"
 BASE_URL = f"https://graph.facebook.com/{API_VERSION}"
 
 # Files

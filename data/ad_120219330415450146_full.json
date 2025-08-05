@@ -1,0 +1,69 @@
+{
+  "id": "120219330415450146",
+  "account_id": "1870398496369747",
+  "ad_active_time": "0",
+  "adset": {
+    "id": "120219330068460146"
+  },
+  "adset_id": "120219330068460146",
+  "campaign": {
+    "id": "120212223751320146"
+  },
+  "campaign_id": "120212223751320146",
+  "configured_status": "PAUSED",
+  "created_time": "2025-05-10T07:07:46-0700",
+  "creative": {
+    "id": "2153239648435068"
+  },
+  "effective_status": "PAUSED",
+  "last_updated_by_app_id": "119211728144504",
+  "name": "Winner 1A - Music - Copy 2",
+  "preview_shareable_link": "https://fb.me/sreKdkZKiGVjseY",
+  "source_ad": {
+    "id": "120217050960670146"
+  },
+  "source_ad_id": "120217050960670146",
+  "status": "PAUSED",
+  "tracking_specs": [
+    {
+      "action.type": [
+        "onsite_conversion"
+      ],
+      "conversion_id": [
+        "7456071837848995",
+        "7571245892962454",
+        "7658869344226307",
+        "7704457879622100",
+        "7706257069457535",
+        "7939275699460291",
+        "8281241731910593",
+        "8487129014675069",
+        "25523902030590244",
+        "25859160710366204"
+      ]
+    },
+    {
+      "action.type": [
+        "link_click"
+      ],
+      "post": [
+        "1305079961622795"
+      ],
+      "post.wall": [
+        "1425424730824181"
+      ]
+    },
+    {
+      "action.type": [
+        "post_engagement"
+      ],
+      "page": [
+        "1425424730824181"
+      ],
+      "post": [
+        "1305079961622795"
+      ]
+    }
+  ],
+  "updated_time": "2025-06-15T11:31:31-0700"
+}

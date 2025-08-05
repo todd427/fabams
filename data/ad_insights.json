@@ -7,11 +7,11 @@
     "ad_name": "Third Pass Ad 1",
     "ad_id": "120220873726090146",
     "metrics": {
-      "impressions": "160920",
-      "clicks": "10121",
+      "impressions": "160925",
+      "clicks": "10122",
       "spend": "301.56",
-      "cpc": "0.029795",
-      "ctr": "6.289461",
+      "cpc": "0.029793",
+      "ctr": "6.289887",
       "actions": [
         {
           "action_type": "onsite_conversion.messaging_conversation_started_7d",
@@ -90,11 +90,11 @@
     "ad_name": "Winner 1B - Copy 4",
     "ad_id": "120220104591000146",
     "metrics": {
-      "impressions": "29569",
+      "impressions": "29570",
       "clicks": "1757",
       "spend": "175.12",
       "cpc": "0.09967",
-      "ctr": "5.942034",
+      "ctr": "5.941833",
       "actions": [
         {
           "action_type": "app_site_visit",
@@ -197,61 +197,6 @@
     }
   },
   {
-    "campaign_name": "Ghost War",
-    "campaign_id": "120219328015730146",
-    "adset_name": "Ghost War Ad Set",
-    "adset_id": "120219328017090146",
-    "ad_name": "GW Image 1 - Copy 3",
-    "ad_id": "120219328017790146",
-    "metrics": {
-      "impressions": "21378",
-      "clicks": "1663",
-      "spend": "452.32",
-      "cpc": "0.27199",
-      "ctr": "7.779025",
-      "actions": [
-        {
-          "action_type": "onsite_conversion.messaging_block",
-          "value": "2"
-        },
-        {
-          "action_type": "post_engagement",
-          "value": "1638"
-        },
-        {
-          "action_type": "onsite_conversion.post_save",
-          "value": "17"
-        },
-        {
-          "action_type": "comment",
-          "value": "1"
-        },
-        {
-          "action_type": "page_engagement",
-          "value": "1638"
-        },
-        {
-          "action_type": "post",
-          "value": "1"
-        },
-        {
-          "action_type": "video_view",
-          "value": "28"
-        },
-        {
-          "action_type": "post_reaction",
-          "value": "34"
-        },
-        {
-          "action_type": "link_click",
-          "value": "1557"
-        }
-      ],
-      "date_start": "2025-07-06",
-      "date_stop": "2025-08-04"
-    }
-  },
-  {
     "campaign_name": "JG NL - Canada",
     "campaign_id": "120217604683390146",
     "adset_name": "JG NL 12.14.2023 - Copy",
@@ -259,11 +204,11 @@
     "ad_name": "JG NL 12.14.2023",
     "ad_id": "120217604683580146",
     "metrics": {
-      "impressions": "130860",
+      "impressions": "130862",
       "clicks": "922",
       "spend": "142.22",
       "cpc": "0.154252",
-      "ctr": "0.70457",
+      "ctr": "0.704559",
       "actions": [
         {
           "action_type": "app_site_visit",
@@ -322,11 +267,11 @@
     "ad_name": "Winner 4 A - Music - UK",
     "ad_id": "120217088396020146",
     "metrics": {
-      "impressions": "20518",
+      "impressions": "20522",
       "clicks": "773",
-      "spend": "52.93",
-      "cpc": "0.068473",
-      "ctr": "3.767424",
+      "spend": "52.95",
+      "cpc": "0.068499",
+      "ctr": "3.766689",
       "actions": [
         {
           "action_type": "app_site_visit",
@@ -377,11 +322,11 @@
     "ad_name": "Winner 4 A - Music - UK",
     "ad_id": "120215811858110146",
     "metrics": {
-      "impressions": "100059",
+      "impressions": "100061",
       "clicks": "2021",
       "spend": "206.12",
       "cpc": "0.101989",
-      "ctr": "2.019808",
+      "ctr": "2.019768",
       "actions": [
         {
           "action_type": "post_engagement",
@@ -465,6 +410,281 @@
         {
           "action_type": "link_click",
           "value": "244"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL 12.14.2023",
+    "campaign_id": "120201329366930146",
+    "adset_name": "JG NL 12.14.2023",
+    "adset_id": "120201329367070146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120201329367180146",
+    "metrics": {
+      "impressions": "36141",
+      "clicks": "1347",
+      "spend": "147.04",
+      "cpc": "0.109161",
+      "ctr": "3.727069",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "5148"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "10"
+        },
+        {
+          "action_type": "comment",
+          "value": "3"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "5153"
+        },
+        {
+          "action_type": "post",
+          "value": "4"
+        },
+        {
+          "action_type": "like",
+          "value": "5"
+        },
+        {
+          "action_type": "video_view",
+          "value": "3877"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "80"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1174"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL 12.14.2023",
+    "campaign_id": "120201329366930146",
+    "adset_name": "JG NL 12.14.2023",
+    "adset_id": "120201329367070146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120201329367180146",
+    "metrics": {
+      "impressions": "36141",
+      "clicks": "1347",
+      "spend": "147.04",
+      "cpc": "0.109161",
+      "ctr": "3.727069",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "5148"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "10"
+        },
+        {
+          "action_type": "comment",
+          "value": "3"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "5153"
+        },
+        {
+          "action_type": "post",
+          "value": "4"
+        },
+        {
+          "action_type": "like",
+          "value": "5"
+        },
+        {
+          "action_type": "video_view",
+          "value": "3877"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "80"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1174"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL 12.14.2023",
+    "campaign_id": "120201329366930146",
+    "adset_name": "JG NL 12.14.2023",
+    "adset_id": "120201329367070146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120201329367180146",
+    "metrics": {
+      "impressions": "36141",
+      "clicks": "1347",
+      "spend": "147.04",
+      "cpc": "0.109161",
+      "ctr": "3.727069",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "5148"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "10"
+        },
+        {
+          "action_type": "comment",
+          "value": "3"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "5153"
+        },
+        {
+          "action_type": "post",
+          "value": "4"
+        },
+        {
+          "action_type": "like",
+          "value": "5"
+        },
+        {
+          "action_type": "video_view",
+          "value": "3877"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "80"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1174"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL 12.14.2023",
+    "campaign_id": "120201329366930146",
+    "adset_name": "JG NL 12.14.2023",
+    "adset_id": "120201329367070146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120201329367180146",
+    "metrics": {
+      "impressions": "36141",
+      "clicks": "1347",
+      "spend": "147.04",
+      "cpc": "0.109161",
+      "ctr": "3.727069",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "5148"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "10"
+        },
+        {
+          "action_type": "comment",
+          "value": "3"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "5153"
+        },
+        {
+          "action_type": "post",
+          "value": "4"
+        },
+        {
+          "action_type": "like",
+          "value": "5"
+        },
+        {
+          "action_type": "video_view",
+          "value": "3877"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "80"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1174"
+        }
+      ],
+      "date_start": "2025-07-06",
+      "date_stop": "2025-08-04"
+    }
+  },
+  {
+    "campaign_name": "JG NL 12.14.2023",
+    "campaign_id": "120201329366930146",
+    "adset_name": "JG NL 12.14.2023",
+    "adset_id": "120201329367070146",
+    "ad_name": "JG NL 12.14.2023",
+    "ad_id": "120201329367180146",
+    "metrics": {
+      "impressions": "36141",
+      "clicks": "1347",
+      "spend": "147.04",
+      "cpc": "0.109161",
+      "ctr": "3.727069",
+      "actions": [
+        {
+          "action_type": "post_engagement",
+          "value": "5148"
+        },
+        {
+          "action_type": "onsite_conversion.post_save",
+          "value": "10"
+        },
+        {
+          "action_type": "comment",
+          "value": "3"
+        },
+        {
+          "action_type": "page_engagement",
+          "value": "5153"
+        },
+        {
+          "action_type": "post",
+          "value": "4"
+        },
+        {
+          "action_type": "like",
+          "value": "5"
+        },
+        {
+          "action_type": "video_view",
+          "value": "3877"
+        },
+        {
+          "action_type": "post_reaction",
+          "value": "80"
+        },
+        {
+          "action_type": "link_click",
+          "value": "1174"
         }
       ],
       "date_start": "2025-07-06",

@@ -11,7 +11,7 @@ load_dotenv()
 
 ACCESS_TOKEN = os.getenv("FB_ACCESS_TOKEN")
 AD_ACCOUNT_ID = os.getenv("FB_AD_ACCOUNT_ID")
-API_VERSION = "v19.0"
+API_VERSION = "v23.0"
 BASE_URL = f"https://graph.facebook.com/{API_VERSION}"
 AD_ACCOUNT = f"act_{AD_ACCOUNT_ID}"
 
@@ -20,7 +20,6 @@ OUTPUT_DIR = "data"
 ADS_FILE = os.path.join(OUTPUT_DIR, "ads.json")
 PROGRESS_FILE = os.path.join(OUTPUT_DIR, "fetch_progress.json")
 
-# Ensure data directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
@@ -82,7 +81,7 @@ def fetch_adsets(campaign_id):
 def fetch_ads(adset_id):
     """Fetch only ACTIVE ads, including creative & normalized target URL."""
     ads = fb_get(f"{adset_id}/ads", {
-        "fields": "id,name,status,creative{object_story_spec}",
+        "fields": "id,name,status,creative{object_story_spec,object_url}",
         "limit": 100
     }).get("data", [])
 
@@ -94,15 +93,28 @@ def fetch_ads(adset_id):
         target_url = None
         creative = ad.get("creative", {})
         oss = creative.get("object_story_spec", {})
-        link_data = oss.get("link_data", {})
 
-        if "link" in link_data:
-            target_url = link_data["link"]
-        elif "call_to_action" in link_data and "value" in link_data["call_to_action"]:
-            target_url = link_data["call_to_action"]["value"].get("link")
+        # Try link_data.link
+        if "link_data" in oss and "link" in oss["link_data"]:
+            target_url = oss["link_data"]["link"]
+
+        # Try link_data.call_to_action.value.link
+        elif "link_data" in oss and "call_to_action" in oss["link_data"]:
+            target_url = oss["link_data"]["call_to_action"]["value"].get("link")
+
+        # Try video_data.link
+        elif "video_data" in oss and "link" in oss["video_data"]:
+            target_url = oss["video_data"]["link"]
+
+        # Try creative.object_url
+        elif creative.get("object_url"):
+            target_url = creative["object_url"]
+
+        print(f"DEBUG: Ad '{ad.get('name')}' raw URL: {target_url}")
 
         if target_url:
             target_url = normalize_amazon_url(target_url)
+        print(f"DEBUG: Ad '{ad.get('name')}' normalized URL: {target_url}")
 
         ad["target_url"] = target_url
         active_ads.append(ad)

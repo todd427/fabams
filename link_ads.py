@@ -129,6 +129,13 @@ def main():
                 ad_name = ad["name"]
                 target_url = ad.get("target_url")
 
+                # Warn if URL is missing
+                if not target_url:
+                    print(f"⚠️ WARNING: Ad '{ad_name}' has no target URL — skipping")
+                    continue
+
+                print(f"DEBUG: Processing ad '{ad_name}' with URL: {target_url}")
+
                 ad_type, metadata = classify_url(target_url)
 
                 if metadata:

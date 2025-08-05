@@ -235,5 +235,86 @@
         ]
       }
     ]
+  },
+  {
+    "campaign_id": "120201329366930146",
+    "name": "JG NL 12.14.2023",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120201329367070146",
+        "name": "JG NL 12.14.2023",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120201329367180146",
+            "name": "JG NL 12.14.2023",
+            "status": "ACTIVE",
+            "creative": {
+              "object_story_spec": {
+                "page_id": "1425424730824181",
+                "instagram_user_id": "17841400494955140"
+              },
+              "id": "120204094200500146"
+            },
+            "target_url": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120201329366930146",
+    "name": "JG NL 12.14.2023",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120201329367070146",
+        "name": "JG NL 12.14.2023",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120201329367180146",
+            "name": "JG NL 12.14.2023",
+            "status": "ACTIVE",
+            "creative": {
+              "object_story_spec": {
+                "page_id": "1425424730824181",
+                "instagram_user_id": "17841400494955140"
+              },
+              "id": "120204094200500146"
+            },
+            "target_url": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "campaign_id": "120201329366930146",
+    "name": "JG NL 12.14.2023",
+    "status": "ACTIVE",
+    "adsets": [
+      {
+        "adset_id": "120201329367070146",
+        "name": "JG NL 12.14.2023",
+        "status": "ACTIVE",
+        "ads": [
+          {
+            "id": "120201329367180146",
+            "name": "JG NL 12.14.2023",
+            "status": "ACTIVE",
+            "creative": {
+              "object_story_spec": {
+                "page_id": "1425424730824181",
+                "instagram_user_id": "17841400494955140"
+              },
+              "id": "120204094200500146"
+            },
+            "target_url": null
+          }
+        ]
+      }
+    ]
   }
 ]
